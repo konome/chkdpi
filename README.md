@@ -5,7 +5,7 @@ The following data are being retrieved:
 - Available DPI awareness modes and their associated context handles
 - Current system DPI
 - Primary display resolution
-- Windows version of host.
+- Windows version of the host.
 
 ## How to use:
 - Double click on `"chkdpictx.exe"` to retrieve and copy DPI related data to clipboard. Data is encoded to a base64 string hash.
