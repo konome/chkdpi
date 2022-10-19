@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "NQ6alfcL1F5J8Odv2t41Cf2Q6fhzyzOn+jBIvar43PuprxBo/y/xUoqUShkDepDQNVhWXmQoNodv0H1+fKYNyA==",
+  "success": true,
+  "projectFilePath": "J:\\Visual Studio\\Projects\\ChkDpiCtx\\ChkDpiCtx.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\konome\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\vanara.core\\3.4.9\\vanara.core.3.4.9.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\vanara.pinvoke.gdi32\\3.4.9\\vanara.pinvoke.gdi32.3.4.9.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\vanara.pinvoke.kernel32\\3.4.9\\vanara.pinvoke.kernel32.3.4.9.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\vanara.pinvoke.shared\\3.4.9\\vanara.pinvoke.shared.3.4.9.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\vanara.pinvoke.user32\\3.4.9\\vanara.pinvoke.user32.3.4.9.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.4\\microsoft.netcore.app.runtime.win-x64.6.0.4.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.4\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.4.nupkg.sha512",
+    "C:\\Users\\konome\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.4\\microsoft.aspnetcore.app.runtime.win-x64.6.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

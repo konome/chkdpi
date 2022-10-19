@@ -1,0 +1,2 @@
+J:\Visual Studio\Projects\ChkDpiCtx\bin\x64\Release\net6.0-windows\publish\chkdpictx.pdb
+J:\Visual Studio\Projects\ChkDpiCtx\bin\x64\Release\net6.0-windows\publish\chkdpictx.exe
