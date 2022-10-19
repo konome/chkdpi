@@ -32,6 +32,7 @@ namespace Konome.ChkDpiCtx
         {
             try
             {
+                // Get application name and version.
                 Name = Assembly.GetExecutingAssembly().GetName().Name;
                 Version = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
 
