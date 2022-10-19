@@ -6,7 +6,8 @@
       "distributionName": ""
     },
     "ChkDpi": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "-h"
     }
   }
 }

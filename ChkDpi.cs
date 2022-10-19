@@ -12,6 +12,9 @@ namespace Konome.ChkDpi
 {
     class ChkDpi
     {
+        public string Name { get; set; }
+        public string Version { get; set; }
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -35,11 +38,12 @@ namespace Konome.ChkDpi
                 MessageBox(IntPtr.Zero, e.Message, "Error", MB_FLAGS.MB_ICONERROR);
             }
 
+#if DEBUG
+            Console.ReadLine();
+#endif
+            DebugConsole.Close();
             Environment.Exit(0);
         }
-
-        public string Name { get; set; }
-        public string Version { get; set; }
 
         public ChkDpi(string[] args)
         {
@@ -83,8 +87,7 @@ namespace Konome.ChkDpi
 
             if (GetConsoleWindow() == IntPtr.Zero)
                 MessageBox(IntPtr.Zero, "Data copied to clipboard!", Name, MB_FLAGS.MB_ICONINFORMATION);
-            else
-                Console.ReadLine();
+
         }
 
         private static void CopyToClipboard(string str)
@@ -117,6 +120,7 @@ namespace Konome.ChkDpi
                             Console.WriteLine("Copied to clipboard!");
                         }
                         break;
+
                     case "--decode-file":
                         {
                             if (!File.Exists(option.Value))
@@ -132,14 +136,16 @@ namespace Konome.ChkDpi
                             Console.WriteLine("Copied to clipboard!");
                         }
                         break;
+
                     case "-e" or "--encode":
                         {
                             string str = EncodeToBase64(option.Value);
                             CopyToClipboard(str);
                             Console.WriteLine($"\n{str}\n");
                             Console.WriteLine("Copied to clipboard!");
-                            break;
                         }
+                        break;
+
                     case "--encode-file":
                         {
                             if (!File.Exists(option.Value))
@@ -155,22 +161,30 @@ namespace Konome.ChkDpi
                             Console.WriteLine("Copied to clipboard!");
                         }
                         break;
+
                     case "-h" or "--help":
                         Console.WriteLine(
                             $"\n{Name} v{ Version} by konome\n\n" +
                             "-d, --decode HASH\n" +
+
                             "  Decode base64 data to a readable string.\n\n" +
                             "--decode-file FILE\n"+
+
                             "  Decode a .txt file containing a base64 hash.\n\n" +
                             "-e, --encode STRING\n"+
+
                             "  Encode a string value to base64.\n\n"+
+
                             "--encode-file FILE\n" +
                             "  Encode a file to base64.\n\n" +
+
                             "-v, --version\n"+
                             "  Show version of this application.\n\n"+
+
                             "-h, --help\n" +
                             "  Show help.\n\n");;
                         break;
+
                     case "-v" or "--version":
                         Console.WriteLine($"\n{Name} v{Version} by konome\n");
                         break;
