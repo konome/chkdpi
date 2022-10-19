@@ -121,7 +121,7 @@ namespace Konome.GUI
             return result;
         }
 
-        public static Point GetSystemDPI()
+        public static Point GetSystemDpi()
         {
             HDC screen = GetDC(IntPtr.Zero);
             int dpix = GetDeviceCaps(screen, DeviceCap.LOGPIXELSX);

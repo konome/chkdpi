@@ -50,7 +50,7 @@ namespace Konome.ChkDpiCtx
 
                 // Primary monitor size and dpi.
                 SetDpiAwareness(DpiAwareness.SYSTEM);
-                str += $"Primary Monitor:\n{PrimaryMonitor.X}x{PrimaryMonitor.Y} @ {GetSystemDPI().X} DPI\n\n";
+                str += $"Primary Monitor:\n{PrimaryMonitor.X}x{PrimaryMonitor.Y} @ {GetSystemDpi().X} DPI\n\n";
                 
                 // Get a list of available DPI awareness contexts.
                 str += "Available DPI Awareness Context:\n";
