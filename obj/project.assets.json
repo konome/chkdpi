@@ -446,9 +446,9 @@
   "project": {
     "version": "1.0.1",
     "restore": {
-      "projectUniqueName": "J:\\GitHub\\chkdpictx\\ChkDpiCtx.csproj",
-      "projectName": "chkdpictx",
-      "projectPath": "J:\\GitHub\\chkdpictx\\ChkDpiCtx.csproj",
+      "projectUniqueName": "J:\\GitHub\\chkdpictx\\ChkDpi.csproj",
+      "projectName": "chkdpi",
+      "projectPath": "J:\\GitHub\\chkdpictx\\ChkDpi.csproj",
       "packagesPath": "C:\\Users\\konome\\.nuget\\packages\\",
       "outputPath": "J:\\GitHub\\chkdpictx\\obj\\",
       "projectStyle": "PackageReference",
