@@ -1,0 +1,2 @@
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\publish\chkdpictx.pdb
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\publish\chkdpictx.exe

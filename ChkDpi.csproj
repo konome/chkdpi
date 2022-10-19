@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+    <AssemblyName>$(MSBuildProjectName.ToLower)</AssemblyName>
+    <RootNamespace>Konome.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <DebugType>full</DebugType>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+	<Version>1.0.1</Version>
+	<StartupObject>Konome.ChkDpiCtx.ChkDpiCtx</StartupObject>
+	<PublishTrimmed>True</PublishTrimmed>
+	<Company>Konome</Company>
+	<Copyright>Konome</Copyright>
+	
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Vanara.PInvoke.User32" Version="3.4.9" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,5 @@
+J:\GitHub\chkdpictx\obj\x64\Debug\net6.0-windows\ChkDpi.csproj.AssemblyReference.cache
+J:\GitHub\chkdpictx\obj\x64\Debug\net6.0-windows\ChkDpi.GeneratedMSBuildEditorConfig.editorconfig
+J:\GitHub\chkdpictx\obj\x64\Debug\net6.0-windows\ChkDpi.AssemblyInfoInputs.cache
+J:\GitHub\chkdpictx\obj\x64\Debug\net6.0-windows\ChkDpi.AssemblyInfo.cs
+J:\GitHub\chkdpictx\obj\x64\Debug\net6.0-windows\ChkDpi.csproj.CoreCompileInputs.cache
