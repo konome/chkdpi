@@ -151,6 +151,12 @@
         "dependencies": {
           "Vanara.Core": "3.4.9",
           "Vanara.PInvoke.Shared": "3.4.9"
+        },
+        "runtime": {
+          "lib/net6.0/Vanara.PInvoke.Gdi32.dll": {
+            "assemblyVersion": "3.4.9.0",
+            "fileVersion": "3.4.9.0"
+          }
         }
       },
       "Vanara.PInvoke.Kernel32/3.4.9": {
