@@ -31,3 +31,6 @@ The following data are being retrieved:
 
 `-h`, `--help`<br />
   Show help.
+  
+  ## System Requirements:
+  Windows 10 or later.
