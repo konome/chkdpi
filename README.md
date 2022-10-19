@@ -2,9 +2,9 @@
 A tool for Windows to retrieve DPI related data. Incidentally `chkdpictx` is also able to encode/decode base64 from any string and file.
 
 The following data are being retrieved:
-- Available DPI awareness modes and their associated context handles
-- Current system DPI
-- Primary display resolution
+- Available DPI awareness modes and their associated context handles.
+- Current system DPI.
+- Primary display resolution.
 - Windows version of the host.
 
 ## How to use:
