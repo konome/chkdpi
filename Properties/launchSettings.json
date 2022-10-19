@@ -1,6 +1,11 @@
 {
   "profiles": {
-    "ChkDpiCtx": {
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {},
+      "distributionName": ""
+    },
+    "ChkDpi": {
       "commandName": "Project"
     }
   }
