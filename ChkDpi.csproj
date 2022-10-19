@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
@@ -10,13 +10,17 @@
     <RootNamespace>Konome.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <DebugType>full</DebugType>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-	<Version>1.0.1</Version>
+	<Version>1.0.2</Version>
 	<StartupObject>Konome.ChkDpi.ChkDpi</StartupObject>
 	<PublishTrimmed>True</PublishTrimmed>
 	<Company>Konome</Company>
 	<Copyright>Konome</Copyright>
 	
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".gitignore" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Vanara.PInvoke.User32" Version="3.4.9" />

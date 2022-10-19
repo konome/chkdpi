@@ -6,6 +6,7 @@ using static Konome.Base64;
 using static Konome.GUI.DisplayMetrics;
 using static Konome.GUI.DPI;
 using static Vanara.PInvoke.User32;
+using static Vanara.PInvoke.Kernel32;
 
 namespace Konome.ChkDpi
 {
@@ -14,14 +15,26 @@ namespace Konome.ChkDpi
         [STAThread]
         static void Main(string[] args)
         {
-            IntPtr hwnd = (IntPtr)GetForegroundWindow();
-            GetWindowThreadProcessId(hwnd, out uint processid);
-            string fn = Process.GetProcessById((int)processid).MainModule.ModuleName;
-            
-            if(fn == "cmd.exe")
-                Kernel32.AttachConsole(processid);
-            
-            _ = new ChkDpi(args);
+            try
+            {
+                DebugConsole.Create(100, 100, 880, 450);
+
+                IntPtr hwnd = (IntPtr)GetForegroundWindow();
+                GetWindowThreadProcessId(hwnd, out uint processid);
+                string fn = Process.GetProcessById((int)processid).MainModule.ModuleName;
+
+                if (fn == "cmd.exe")
+                    AttachConsole(processid);
+
+                _ = new ChkDpi(args);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+                MessageBox(IntPtr.Zero, e.Message, "Error", MB_FLAGS.MB_ICONERROR);
+            }
+
             Environment.Exit(0);
         }
 
@@ -30,52 +43,48 @@ namespace Konome.ChkDpi
 
         public ChkDpi(string[] args)
         {
-            try
+            // Get application name and version.
+            Name = Assembly.GetExecutingAssembly().GetName().Name;
+            Version = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+
+            if (args.Length > 0)
             {
-                // Get application name and version.
-                Name = Assembly.GetExecutingAssembly().GetName().Name;
-                Version = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+                ParseArguments(args);
+                return;
+            }
 
-                if (args.Length > 0)
-                {
-                    ParseArguments(args);
-                    return;
-                }
+            string str;
+            str = $"\n{Name} v{Version} by konome\n";
+            str += "---------------------------------\n\n";
 
-                string str;
-                str = $"\n{Name} v{Version} by konome\n";
-                str += "---------------------------------\n\n";
+            // Host OS.
+            str += $"OS:\n{Environment.OSVersion}\n\n";
 
-                // Host OS.
-                str += $"OS:\n{Environment.OSVersion}\n\n";
+            // Primary monitor size and dpi.
+            SetDpiAwareness(DpiAwareness.SYSTEM);
+            str += $"Primary Monitor:\n{PrimaryMonitor.X}x{PrimaryMonitor.Y} @ {GetSystemDpi().X} DPI\n\n";
 
-                // Primary monitor size and dpi.
-                SetDpiAwareness(DpiAwareness.SYSTEM);
-                str += $"Primary Monitor:\n{PrimaryMonitor.X}x{PrimaryMonitor.Y} @ {GetSystemDpi().X} DPI\n\n";
-                
-                // Get a list of available DPI awareness contexts.
-                str += "Available DPI Awareness Context:\n";
-                var dpi_ctx_dict = EnumerateDpiAwarenessContext();
-                foreach (var ctx in dpi_ctx_dict)
-                    str += $"{ctx}\n";
+            // Get a list of available DPI awareness contexts.
+            str += "Available DPI Awareness Context:\n";
+            var dpi_ctx_dict = EnumerateDpiAwarenessContext();
+            foreach (var ctx in dpi_ctx_dict)
+                str += $"{ctx}\n";
 
-                Console.WriteLine(str);
+            Console.WriteLine(str);
 
-                // Encode string to base64 hash.
-                string hash = EncodeToBase64(str);
-                Console.WriteLine($"Bas64 hash: {hash}\n");
+            // Encode string to base64 hash.
+            string hash = EncodeToBase64(str);
+            Console.WriteLine($"Bas64 hash: {hash}\n");
 
-                // Copy base64 hash to clipboard.
-                CopyToClipboard(hash);
+            // Copy base64 hash to clipboard.
+            CopyToClipboard(hash);
 
-                Console.WriteLine("Data copied to clipboard!");
+            Console.WriteLine("Data copied to clipboard!");
+
+            if (GetConsoleWindow() == IntPtr.Zero)
                 MessageBox(IntPtr.Zero, "Data copied to clipboard!", Name, MB_FLAGS.MB_ICONINFORMATION);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error: {e.Message}");
-                MessageBox(IntPtr.Zero, e.Message, "Error", MB_FLAGS.MB_ICONERROR);
-            }
+            else
+                Console.ReadLine();
         }
 
         private static void CopyToClipboard(string str)
