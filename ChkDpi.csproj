@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
@@ -11,7 +11,7 @@
     <DebugType>full</DebugType>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
 	<Version>1.0.1</Version>
-	<StartupObject>Konome.ChkDpiCtx.ChkDpiCtx</StartupObject>
+	<StartupObject>Konome.ChkDpi.ChkDpi</StartupObject>
 	<PublishTrimmed>True</PublishTrimmed>
 	<Company>Konome</Company>
 	<Copyright>Konome</Copyright>

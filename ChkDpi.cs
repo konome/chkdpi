@@ -7,7 +7,7 @@ using static Konome.GUI.DisplayMetrics;
 using static Konome.GUI.DPI;
 using static Vanara.PInvoke.User32;
 
-namespace Konome.ChkDpiCtx
+namespace Konome.ChkDpi
 {
     class ChkDpi
     {

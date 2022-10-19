@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "J:\\GitHub\\chkdpictx\\ChkDpi.csproj": {}
+    "J:\\GitHub\\chkdpi\\ChkDpi.csproj": {}
   },
   "projects": {
-    "J:\\GitHub\\chkdpictx\\ChkDpi.csproj": {
+    "J:\\GitHub\\chkdpi\\ChkDpi.csproj": {
       "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "J:\\GitHub\\chkdpictx\\ChkDpi.csproj",
+        "projectUniqueName": "J:\\GitHub\\chkdpi\\ChkDpi.csproj",
         "projectName": "chkdpi",
-        "projectPath": "J:\\GitHub\\chkdpictx\\ChkDpi.csproj",
+        "projectPath": "J:\\GitHub\\chkdpi\\ChkDpi.csproj",
         "packagesPath": "C:\\Users\\konome\\.nuget\\packages\\",
-        "outputPath": "J:\\GitHub\\chkdpictx\\obj\\",
+        "outputPath": "J:\\GitHub\\chkdpi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\konome\\AppData\\Roaming\\NuGet\\NuGet.Config",
