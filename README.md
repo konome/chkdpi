@@ -7,13 +7,13 @@ The following data are being retrieved:
 - Primary display resolution.
 - Windows version of the host.
 
-## How to use:
+## How to use
 - Double click on `"chkdpictx.exe"` to retrieve and copy DPI related data to clipboard. Data is encoded to a base64 string hash.
 - Run `"chkdpictx --decode HASH"` from a command prompt to read the data. 
 - Running `"chkdpictx"` from a command prompt without passing any arguments will retrieve and copy DPI related data to clipboard, and reads both the raw and encoded data immediately simultaneously.
 - Note that you can parse any string data to and from base64, including from a file, using the appropiate command-line option.
 
-## Command line options:
+## Command line options
 `-d`, `--decode HASH`<br />
   Decode base64 data to a readable string.
 
@@ -32,5 +32,5 @@ The following data are being retrieved:
 `-h`, `--help`<br />
   Show help.
   
-  ## System Requirements:
+  ## System Requirements
   Windows 10 or later.
