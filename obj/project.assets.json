@@ -446,11 +446,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "J:\\Visual Studio\\Projects\\ChkDpiCtx\\ChkDpiCtx.csproj",
+      "projectUniqueName": "J:\\GitHub\\chkdpictx\\ChkDpiCtx.csproj",
       "projectName": "chkdpictx",
-      "projectPath": "J:\\Visual Studio\\Projects\\ChkDpiCtx\\ChkDpiCtx.csproj",
+      "projectPath": "J:\\GitHub\\chkdpictx\\ChkDpiCtx.csproj",
       "packagesPath": "C:\\Users\\konome\\.nuget\\packages\\",
-      "outputPath": "J:\\Visual Studio\\Projects\\ChkDpiCtx\\obj\\",
+      "outputPath": "J:\\GitHub\\chkdpictx\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\konome\\AppData\\Roaming\\NuGet\\NuGet.Config",

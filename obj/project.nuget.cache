@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xiNhRH4d4ZrRlPgbNVEOCJcBDlu4BcvRO1C1kiN8vYZ+g+I+D1/mBKEavXU3zvBuhlczK9XeFnj7hucGu3/alQ==",
+  "dgSpecHash": "57erKxRaUBRNLIx1PyYgeHats1BEIDXGLsSkkO5AQ3IH+0OnQkM5Cys4Vet/BtVVasAkGr+6Ov3qP6IxCo2ZwA==",
   "success": true,
-  "projectFilePath": "J:\\Visual Studio\\Projects\\ChkDpiCtx\\ChkDpiCtx.csproj",
+  "projectFilePath": "J:\\GitHub\\chkdpictx\\ChkDpiCtx.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\konome\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\konome\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
