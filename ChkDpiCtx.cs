@@ -1,11 +1,11 @@
-﻿using System.Reflection;
+﻿using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using Vanara.PInvoke;
 using static Konome.Base64;
 using static Konome.GUI.DisplayMetrics;
 using static Konome.GUI.DPI;
 using static Vanara.PInvoke.User32;
-using System.Diagnostics;
 
 namespace Konome.ChkDpiCtx
 {
@@ -50,8 +50,8 @@ namespace Konome.ChkDpiCtx
 
                 // Primary monitor size and dpi.
                 SetDpiAwareness(DpiAwareness.SYSTEM);
-                str += $"Primary Monitor:\n{PrimaryMonitor.X}x{PrimaryMonitor.Y} @ {GetDpiForSystem()} DPI\n\n";
-
+                str += $"Primary Monitor:\n{PrimaryMonitor.X}x{PrimaryMonitor.Y} @ {GetSystemDPI().X} DPI\n\n";
+                
                 // Get a list of available DPI awareness contexts.
                 str += "Available DPI Awareness Context:\n";
                 var dpi_ctx_dict = EnumerateDpiAwarenessContext();

@@ -10,4 +10,4 @@ build_property.EnableSingleFileAnalyzer =
 build_property.EnableTrimAnalyzer = true
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = Konome.ChkDpiCtx
-build_property.ProjectDir = J:\Visual Studio\Projects\ChkDpiCtx\
+build_property.ProjectDir = J:\GitHub\chkdpictx\

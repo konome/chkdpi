@@ -1,4 +1,7 @@
-﻿using static Vanara.PInvoke.User32;
+﻿using System.Drawing;
+using Vanara.PInvoke;
+using static Vanara.PInvoke.Gdi32;
+using static Vanara.PInvoke.User32;
 
 namespace Konome.GUI
 {
@@ -116,6 +119,16 @@ namespace Konome.GUI
             }
 
             return result;
+        }
+
+        public static Point GetSystemDPI()
+        {
+            HDC screen = GetDC(IntPtr.Zero);
+            int dpix = GetDeviceCaps(screen, DeviceCap.LOGPIXELSX);
+            int dpiy = GetDeviceCaps(screen, DeviceCap.LOGPIXELSY);
+            ReleaseDC(IntPtr.Zero, screen);
+
+            return new Point(dpix, dpiy);
         }
     }
 }

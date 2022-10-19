@@ -18,3 +18,23 @@ J:\Visual Studio\Projects\ChkDpiCtx\obj\x64\Release\net6.0-windows\chkdpictx.dll
 J:\Visual Studio\Projects\ChkDpiCtx\obj\x64\Release\net6.0-windows\ChkDpiCtx.genruntimeconfig.cache
 J:\Visual Studio\Projects\ChkDpiCtx\bin\x64\Release\net6.0-windows\chkdpictx.pdb
 J:\Visual Studio\Projects\ChkDpiCtx\obj\x64\Release\net6.0-windows\chkdpictx.pdb
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\chkdpictx.exe
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\chkdpictx.deps.json
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\chkdpictx.runtimeconfig.json
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\chkdpictx.dll
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\chkdpictx.pdb
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\Vanara.Core.dll
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\Vanara.PInvoke.Gdi32.dll
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\Vanara.PInvoke.Kernel32.dll
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\Vanara.PInvoke.Shared.dll
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\Vanara.PInvoke.User32.dll
+J:\GitHub\chkdpictx\bin\x64\Release\net6.0-windows\fr\Vanara.Core.resources.dll
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\ChkDpiCtx.csproj.AssemblyReference.cache
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\ChkDpiCtx.GeneratedMSBuildEditorConfig.editorconfig
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\ChkDpiCtx.AssemblyInfoInputs.cache
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\ChkDpiCtx.AssemblyInfo.cs
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\ChkDpiCtx.csproj.CoreCompileInputs.cache
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\ChkDpiCtx.csproj.CopyComplete
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\chkdpictx.dll
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\chkdpictx.pdb
+J:\GitHub\chkdpictx\obj\x64\Release\net6.0-windows\ChkDpiCtx.genruntimeconfig.cache

@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {},
     ".NETCoreApp,Version=v6.0/win-x64": {
-      "chkdpictx/1.0": {
+      "chkdpictx/1.0.1": {
         "dependencies": {
           "Vanara.PInvoke.User32": "3.4.9",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "6.0.4"
@@ -194,7 +194,7 @@
     }
   },
   "libraries": {
-    "chkdpictx/1.0": {
+    "chkdpictx/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
