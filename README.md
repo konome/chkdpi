@@ -33,6 +33,9 @@ The following data are being retrieved:
 `--no-clipboard`<br />
   Do not copy base64 to clipboard.
 
+`--base64`<br />
+  Output base64 only.
+
 `-v`, `--version`<br />
   Show version of this application.
 
