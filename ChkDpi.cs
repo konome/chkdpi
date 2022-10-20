@@ -16,9 +16,13 @@ namespace Konome.ChkDpi
         public string Name { get; set; }
         public string Version { get; set; }
 
+        private bool _quit_on_param = true;
+
+        private bool _base64_only = false;
         private bool _clipboard = true;
         private bool _iniout = false;
         private string _inipath;
+
 
         [STAThread]
         static void Main(string[] args)
@@ -60,7 +64,7 @@ namespace Konome.ChkDpi
             {
                 ParseArguments(args);
 
-                if(!_iniout)
+                if(_quit_on_param)
                     return;
             }
 
@@ -81,11 +85,12 @@ namespace Konome.ChkDpi
             foreach (var ctx in dpi_ctx_dict)
                 str += $"{ctx}\n";
 
-            Console.WriteLine(str);
+            if(!_base64_only)
+                Console.WriteLine(str);
 
             // Encode string to base64 hash.
             string hash = EncodeToBase64(str);
-            Console.WriteLine($"Bas64 hash: {hash}\n");
+            Console.WriteLine($"{hash}\n");
 
             // Copy base64 hash to clipboard.
             if(_clipboard)
@@ -198,10 +203,18 @@ namespace Konome.ChkDpi
                             fs.Flush();
                             fs.Write(Encoding.UTF8.GetBytes("[GENERAL]"));
                         }
+
+                        _quit_on_param = false;
                         break;
 
                     case "--no-clipboard":
                         _clipboard = false;
+                        _quit_on_param = false;
+                        break;
+
+                    case "--base64":
+                        _base64_only = true;
+                        _quit_on_param = false;
                         break;
 
                     case "-h" or "--help":
@@ -224,6 +237,9 @@ namespace Konome.ChkDpi
                             
                             "--no-clipboard\n" +
                             "  Do not copy base64 to clipboard.\n\n"+
+
+                            "--base64\n" + 
+                            "  Output base64 only\n\b"+
 
                             "-v, --version\n" +
                             "  Show version of this application.\n\n" +
