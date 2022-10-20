@@ -30,6 +30,9 @@ The following data are being retrieved:
 `--ini FILE`<br />
   Output DPI related data to a .ini file.
 
+`--no-clipboard`<br />
+  Do not copy base64 to clipboard.
+
 `-v`, `--version`<br />
   Show version of this application.
 

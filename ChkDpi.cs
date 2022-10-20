@@ -16,6 +16,7 @@ namespace Konome.ChkDpi
         public string Name { get; set; }
         public string Version { get; set; }
 
+        private bool _clipboard = true;
         private bool _iniout = false;
         private string _inipath;
 
@@ -87,7 +88,8 @@ namespace Konome.ChkDpi
             Console.WriteLine($"Bas64 hash: {hash}\n");
 
             // Copy base64 hash to clipboard.
-            CopyToClipboard(hash);
+            if(_clipboard)
+                CopyToClipboard(hash);
 
             // Write data to ini.
             if (_iniout)
@@ -103,11 +105,13 @@ namespace Konome.ChkDpi
                 Console.WriteLine("Data written to .ini");
             }
 
-            Console.WriteLine("Data copied to clipboard!");
+            if (_clipboard)
+            {
+                Console.WriteLine("Data copied to clipboard!");
 
-            if (GetConsoleWindow() == IntPtr.Zero)
-                MessageBox(IntPtr.Zero, "Data copied to clipboard!", Name, MB_FLAGS.MB_ICONINFORMATION);
-
+                if (GetConsoleWindow() == IntPtr.Zero)
+                    MessageBox(IntPtr.Zero, "Data copied to clipboard!", Name, MB_FLAGS.MB_ICONINFORMATION);
+            }
         }
 
         private static void CopyToClipboard(string str)
@@ -196,17 +200,20 @@ namespace Konome.ChkDpi
                         }
                         break;
 
+                    case "--no-clipboard":
+                        _clipboard = false;
+                        break;
+
                     case "-h" or "--help":
                         Console.WriteLine(
                             $"\n{Name} v{ Version} by konome\n\n" +
                             "-d, --decode HASH\n" +
-
                             "  Decode base64 data to a readable string.\n\n" +
+
                             "--decode-file FILE\n" +
-
                             "  Decode a .txt file containing a base64 hash.\n\n" +
-                            "-e, --encode STRING\n" +
 
+                            "-e, --encode STRING\n" +
                             "  Encode a string value to base64.\n\n" +
 
                             "--encode-file FILE\n" +
@@ -214,6 +221,9 @@ namespace Konome.ChkDpi
 
                             "--ini FILE\n" +
                             "  Output DPI related data to a .ini file.\n\n" +
+                            
+                            "--no-clipboard\n" +
+                            "  Do not copy base64 to clipboard.\n\n"+
 
                             "-v, --version\n" +
                             "  Show version of this application.\n\n" +
