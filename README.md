@@ -12,6 +12,7 @@ The following data are being retrieved:
 - Run `"chkdpi --decode HASH"` from a command prompt to read the data. 
 - Running `"chkdpi"` from a command prompt without passing any arguments will retrieve and copy DPI related data to clipboard, and will also display both the raw and encoded data immediately simultaneously.
 - Note that you can convert any string data to and from base64, including from file, using the appropiate command-line option.
+- Additionally, DPI related data can be written to a .ini file using `--ini FILE` in a command prompt.
 
 ## Command line options:
 `-d`, `--decode HASH`<br />
@@ -25,6 +26,9 @@ The following data are being retrieved:
 
 `--encode-file FILE`<br />
   Encode a file to base64.
+
+`--ini FILE`<br />
+  Output DPI related data to a .ini file.
 
 `-v`, `--version`<br />
   Show version of this application.

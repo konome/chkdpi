@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "chkdpi/1.0.3": {
+      "chkdpi/1.0.4": {
         "dependencies": {
           "Vanara.PInvoke.User32": "3.4.9"
         },
@@ -94,7 +94,7 @@
     }
   },
   "libraries": {
-    "chkdpi/1.0.3": {
+    "chkdpi/1.0.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

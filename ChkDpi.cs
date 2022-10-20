@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using Vanara.PInvoke;
 using static Konome.Base64;
 using static Konome.GUI.DisplayMetrics;
@@ -15,6 +16,9 @@ namespace Konome.ChkDpi
         public string Name { get; set; }
         public string Version { get; set; }
 
+        private bool _iniout = false;
+        private string _inipath;
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -22,7 +26,7 @@ namespace Konome.ChkDpi
             {
                 DebugConsole.Create(100, 100, 880, 450);
 
-                IntPtr hwnd = (IntPtr)GetForegroundWindow();
+                HWND hwnd = GetForegroundWindow();
                 GetWindowThreadProcessId(hwnd, out uint processid);
                 string fn = Process.GetProcessById((int)processid).MainModule.ModuleName;
 
@@ -54,7 +58,9 @@ namespace Konome.ChkDpi
             if (args.Length > 0)
             {
                 ParseArguments(args);
-                return;
+
+                if(!_iniout)
+                    return;
             }
 
             string str;
@@ -82,6 +88,20 @@ namespace Konome.ChkDpi
 
             // Copy base64 hash to clipboard.
             CopyToClipboard(hash);
+
+            // Write data to ini.
+            if (_iniout)
+            {
+                IniFileStream ini = new(_inipath);
+                var section = "GENERAL";
+                ini.WriteKey("OS", Environment.OSVersion.ToString(), section);
+                ini.WriteKey("Primary Monitor", $"{PrimaryMonitor.X}x{PrimaryMonitor.Y} @ {GetSystemDpi().X}", section);
+
+                foreach (var ctx in dpi_ctx_dict)
+                    ini.WriteKey(ctx.Key.ToString(), ctx.Value.ToString(), "DPI Awareness Context".ToUpper());
+                
+                Console.WriteLine("Data written to .ini");
+            }
 
             Console.WriteLine("Data copied to clipboard!");
 
@@ -162,27 +182,44 @@ namespace Konome.ChkDpi
                         }
                         break;
 
+                    case "--ini":
+                        _iniout = true;
+
+                        _inipath = option.Value;
+                        if (string.IsNullOrEmpty(_inipath))
+                            _inipath = "config.ini";
+
+                        using (FileStream fs = File.Create(_inipath))
+                        {
+                            fs.Flush();
+                            fs.Write(Encoding.UTF8.GetBytes("[GENERAL]"));
+                        }
+                        break;
+
                     case "-h" or "--help":
                         Console.WriteLine(
                             $"\n{Name} v{ Version} by konome\n\n" +
                             "-d, --decode HASH\n" +
 
                             "  Decode base64 data to a readable string.\n\n" +
-                            "--decode-file FILE\n"+
+                            "--decode-file FILE\n" +
 
                             "  Decode a .txt file containing a base64 hash.\n\n" +
-                            "-e, --encode STRING\n"+
+                            "-e, --encode STRING\n" +
 
-                            "  Encode a string value to base64.\n\n"+
+                            "  Encode a string value to base64.\n\n" +
 
                             "--encode-file FILE\n" +
                             "  Encode a file to base64.\n\n" +
 
-                            "-v, --version\n"+
-                            "  Show version of this application.\n\n"+
+                            "--ini FILE\n" +
+                            "  Output DPI related data to a .ini file.\n\n" +
+
+                            "-v, --version\n" +
+                            "  Show version of this application.\n\n" +
 
                             "-h, --help\n" +
-                            "  Show help.\n\n");;
+                            "  Show help.\n\n");
                         break;
 
                     case "-v" or "--version":
