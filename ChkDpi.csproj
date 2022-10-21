@@ -10,9 +10,8 @@
     <RootNamespace>Konome.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <DebugType>full</DebugType>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-	<Version>1.0.6</Version>
-	<StartupObject>Konome.ChkDpi.ChkDpi</StartupObject>
-	<PublishTrimmed>True</PublishTrimmed>
+	<Version>1.0.7</Version>
+	<PublishTrimmed>False</PublishTrimmed>
 	<Company>Konome</Company>
 	<Copyright>Konome</Copyright>
 	

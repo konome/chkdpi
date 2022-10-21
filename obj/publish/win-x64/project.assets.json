@@ -558,13 +558,13 @@
     "C:\\Users\\konome\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.0.6",
     "restore": {
-      "projectUniqueName": "J:\\GitHub\\chkdpictx\\ChkDpiCtx.csproj",
-      "projectName": "chkdpictx",
-      "projectPath": "J:\\GitHub\\chkdpictx\\ChkDpiCtx.csproj",
+      "projectUniqueName": "J:\\GitHub\\chkdpi\\ChkDpi.csproj",
+      "projectName": "chkdpi",
+      "projectPath": "J:\\GitHub\\chkdpi\\ChkDpi.csproj",
       "packagesPath": "C:\\Users\\konome\\.nuget\\packages\\",
-      "outputPath": "J:\\GitHub\\chkdpictx\\obj\\publish\\win-x64\\",
+      "outputPath": "J:\\GitHub\\chkdpi\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\konome\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -608,20 +608,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[6.0.4, 6.0.4]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[6.0.4, 6.0.4]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[6.0.4, 6.0.4]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

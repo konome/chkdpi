@@ -11,18 +11,16 @@ using static Vanara.PInvoke.Kernel32;
 
 namespace Konome.ChkDpi
 {
-    class ChkDpi
+    public class ChkDpi
     {
         public string Name { get; set; }
         public string Version { get; set; }
 
         private bool _quit_on_param = true;
-
         private bool _base64_only = false;
         private bool _clipboard = true;
         private bool _iniout = false;
         private string _inipath;
-
 
         [STAThread]
         static void Main(string[] args)
@@ -60,6 +58,7 @@ namespace Konome.ChkDpi
             Name = Assembly.GetExecutingAssembly().GetName().Name;
             Version = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
 
+            // Parse arguments.
             if (args.Length > 0)
             {
                 ParseArguments(args);
@@ -99,7 +98,7 @@ namespace Konome.ChkDpi
             // Write data to ini.
             if (_iniout)
             {
-                IniFileStream ini = new(_inipath);
+                IniFile ini = new(_inipath);
                 var section = "GENERAL";
                 ini.WriteKey("OS", Environment.OSVersion.ToString(), section);
                 ini.WriteKey("Primary Monitor", $"{PrimaryMonitor.X}x{PrimaryMonitor.Y} @ {GetSystemDpi().X}", section);
